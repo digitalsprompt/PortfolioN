@@ -1,30 +1,45 @@
-from urllib import request
 from django.shortcuts import render, redirect
-from .models import Portfolio
-from .form import PortfolioForm
-# from django.http import HttpResponse
+from .models import *
+from .form import PortfolioForm, ProjectForm
+
 
 # Create your views here.
-
 def index(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = PortfolioForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')  # Redirect to a success page or the same page
-        else:
-            print("Form errors:", form.errors)  # Debug output
+            return redirect("index")
     else:
         form = PortfolioForm()
-    return render(request, 'index.html', {'form': form})
 
-# def info(request):
-#     if request.method == 'POST':
-#         form = PortfolioForm(request.POST)
+    projects = Project.objects.filter(is_featured=True)
+    return render(request, "index.html", {"form": form, "projects": projects})
+
+
+# def project_create(request):
+#     if request.method == "POST":
+#         form = ProjectForm(request.POST, request.FILES)
 #         if form.is_valid():
 #             form.save()
-#             return redirect('index')  # Redirect to a success page or the same page
+#             return redirect("project_create")
 #     else:
-#         form = PortfolioForm()
-#     return render(request, 'index.html', {'form': form})
+#         form = ProjectForm()
+
+#     projects = Project.objects.all()
+#     return render(
+#         request,
+#         "project_form.html",
+#         {
+#             "form": form,
+#             "projects": projects,
+#         },
+#     )
+def index(request):
+    projects = Project.objects.all()
     
+    context = {
+        'projects': projects
+    }
+    
+    return render(request, 'index.html', context)

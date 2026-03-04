@@ -427,9 +427,16 @@ body {
 .project-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    /* background: linear-gradient(135deg, #7c3aed, #a855f7); */
     position: relative;
     overflow: hidden;
+}
+
+.project-image-tag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .project-image::after {
@@ -439,7 +446,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="10" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="15" fill="white" opacity="0.1"/><rect x="40" y="40" width="20" height="20" fill="white" opacity="0.1" transform="rotate(45 50 50)"/></svg>');
+    /* background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="10" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="15" fill="white" opacity="0.1"/><rect x="40" y="40" width="20" height="20" fill="white" opacity="0.1" transform="rotate(45 50 50)"/></svg>'); */
     animation: movePattern 20s linear infinite;
 }
 
@@ -448,7 +455,7 @@ body {
     100% { transform: translateX(100px) translateY(100px); }
 }
 
-.gradient-1 { background: linear-gradient(135deg, #04a2ab 0%, #004972 100%); }
+/* .gradient-1 { background: linear-gradient(135deg, #04a2ab 0%, #004972 100%); } */
 .gradient-2 { background: linear-gradient(135deg, #2db8c3 0%, #04a2ab 100%); }
 .gradient-3 { background: linear-gradient(135deg, #fcbb0e 0%, #04a2ab 100%); }
 .gradient-4 { background: linear-gradient(135deg, #002a47 0%, #2db8c3 100%); }
@@ -809,3 +816,4 @@ body {
         font-size: 0.8rem;
     }
 }
+
