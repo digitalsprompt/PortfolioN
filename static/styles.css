@@ -803,12 +803,44 @@ body {
 /* ========================================
    Responsive Design
    ======================================== */
+@media (max-width: 900px) {
+    body {
+        /* background-attachment: scroll; */
+        background-position: center center;
+        background-size: 100% auto;
+        background-attachment: fixed;
+        /* background-position: center; */
+        /* background-repeat: no-repeat; */
+        /* background-size: cover;             */
+        /* height: 100%; */
+        /* height: 100vh; */
+        /* width: 100vw; */
+    }
+}
+
 
 @media (max-width: 768px) {
     body {
-        background-attachment: fixed;
+        /* background-attachment: scroll; */
         background-position: center center;
         background-size: 100% auto;
+        background-attachment: fixed;
+        /* background-position: center; */
+        /* background-repeat: no-repeat; */
+        /* background-size: cover;             */
+        /* height: 100%; */
+        /* height: 100vh; */
+        /* width: 100vw; */
+    }
+
+@media (max-width: 480px) {
+    body {
+        /* background-attachment: scroll; */
+        background-position: center center;
+        background-size: 100% auto;
+        background-attachment: fixed;
+        /* height: 100vh; */
+        /* width: 100vw; */
     }
 
     .nav-container {
@@ -895,12 +927,6 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    body {
-        background-attachment: fixed;
-        background-position: center center;
-        background-size: 100% auto;
-    }
 
     .hero-title {
         font-size: 1.8rem;
