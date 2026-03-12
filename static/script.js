@@ -123,9 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href').slice(1) === currentSection) {
-                link.style.color = '#a855f7';
-            } else {
-                link.style.color = '';
+                link.classList.add('active');
             }
         });
     });
