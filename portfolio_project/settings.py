@@ -37,12 +37,12 @@ def env_list(name, default):
 DEBUG = env_bool("DEBUG")
 ALLOWED_HOSTS = env_list(
     "ALLOWED_HOSTS",
-    "localhost,127.0.0.1,digitalsprompt.online,www.digitalsprompt.online,digitals-prompt.onrender.com",
+    "localhost,127.0.0.1,digitalsprompt.online,www.digitalsprompt.online,digitals-prompt.onrender.com"
 )
 
 CSRF_TRUSTED_ORIGINS = env_list(
     "CSRF_TRUSTED_ORIGINS", 
-    "https://digitalsprompt.online,https://www.digitalsprompt.online,https://digitals-prompt.onrender.com"
+    "https://digitalsprompt.online,https://www.digitalsprompt.online,https://digitals-prompt.onrender.com,"
 )
 
 # Render terminates HTTPS before forwarding requests to Django.
