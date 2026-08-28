@@ -1,0 +1,17 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#1A1021"/>
+  <circle cx="1328" cy="132" r="210" fill="#BA5CFF" fill-opacity="0.28"/>
+  <circle cx="220" cy="760" r="240" fill="#FF8AAE" fill-opacity="0.24"/>
+  <rect x="170" y="150" width="1260" height="600" rx="34" fill="#281330" stroke="rgba(255,255,255,0.22)"/>
+  <rect x="236" y="222" width="420" height="236" rx="26" fill="#3B1948"/>
+  <polygon points="396,294 396,386 488,340" fill="#F7EFFF"/>
+  <rect x="716" y="232" width="470" height="54" rx="14" fill="#F7EFFF" fill-opacity="0.95"/>
+  <rect x="716" y="324" width="540" height="24" rx="12" fill="#D2B5EA"/>
+  <rect x="716" y="370" width="492" height="24" rx="12" fill="#B793D3"/>
+  <rect x="716" y="416" width="388" height="24" rx="12" fill="#936DB0"/>
+  <rect x="236" y="534" width="214" height="118" rx="24" fill="#542768"/>
+  <rect x="474" y="534" width="214" height="118" rx="24" fill="#6D2F85"/>
+  <rect x="712" y="534" width="214" height="118" rx="24" fill="#85389F"/>
+  <rect x="950" y="534" width="214" height="118" rx="24" fill="#9E42B9"/>
+  <text x="238" y="118" fill="#F4F2EF" font-size="42" font-family="Arial, sans-serif" letter-spacing="5">CONTENT COLLABORATION</text>
+</svg>

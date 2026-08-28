@@ -1,0 +1,17 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#28111B"/>
+  <circle cx="1300" cy="150" r="215" fill="#FF6B9C" fill-opacity="0.24"/>
+  <circle cx="260" cy="760" r="250" fill="#F0B05A" fill-opacity="0.22"/>
+  <rect x="170" y="144" width="1260" height="610" rx="34" fill="#3A1626" stroke="rgba(255,255,255,0.22)"/>
+  <rect x="236" y="214" width="526" height="432" rx="26" fill="#4A1B31"/>
+  <circle cx="430" cy="400" r="112" stroke="#FFE4EC" stroke-width="24"/>
+  <path d="M500 470L610 580" stroke="#FFE4EC" stroke-width="24" stroke-linecap="round"/>
+  <rect x="844" y="228" width="480" height="56" rx="14" fill="#FFF3F7" fill-opacity="0.96"/>
+  <rect x="844" y="330" width="414" height="22" rx="11" fill="#F2B4C8"/>
+  <rect x="844" y="374" width="448" height="22" rx="11" fill="#D985A6"/>
+  <rect x="844" y="418" width="390" height="22" rx="11" fill="#BE5D84"/>
+  <rect x="844" y="496" width="120" height="120" rx="22" fill="#5A2039"/>
+  <rect x="988" y="456" width="120" height="160" rx="22" fill="#7C2D50"/>
+  <rect x="1132" y="404" width="120" height="212" rx="22" fill="#A13A69"/>
+  <text x="238" y="112" fill="#F4F2EF" font-size="42" font-family="Arial, sans-serif" letter-spacing="5">SEO AND STRUCTURE</text>
+</svg>

@@ -1,0 +1,319 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="home" class="hero">
+    <div class="container hero-shell">
+        <div class="hero-copy">
+            <p class="eyebrow">Frontend Developer | Backend Developer</p>
+            <h1 class="hero-title">I build websites that feel polished, modern, and unmistakably intentional.</h1>
+            <p class="hero-subtitle">I build fast, conversion-focused websites for businesses that turn visitors into paying customers</p>
+            <div class="hero-actions">
+                <a href="#projects" class="cta-button">View Projects</a>
+                <a href="#contact" class="secondary-button">Contact Me</a>
+            </div>
+            <div class="hero-highlights">
+                <span>Responsive UI</span>
+                <span>Frontend Development</span>
+                <span>Backend Development</span>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-panel portrait-panel">
+                <p class="panel-label">Crafting clean interfaces and useful interactions.</p>
+                <div class="portrait-frame">
+                    <img src="https://res.cloudinary.com/dfdffxk9t/image/upload/v1774696101/photo_2026-03-28_12-06-32_nk27cc.jpg" alt="Portrait of Oluwafemi" class="portrait-image">
+                    <div class="portrait-glow"></div>
+                    <!-- <div class="portrait-card">
+                        <span class="portrait-role">Developer</span>
+                        <h2>Oluwafemi</h2>
+                        <p>Crafting clean interfaces and useful interactions.</p>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="hero-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">Deployed</span>
+                    <span class="metric-label">Production-Ready Web Apps</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">Scalable</span>
+                    <span class="metric-label">Built for Growth and Performance</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-heading">
+            <p class="section-kicker">Beyond The Code</p>
+            <h2 class="section-title">I'm building thoughtful products and clear communication.</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm a developer focused on clean interfaces, practical problem-solving, and experiences that feel easy to use. I enjoy turning rough ideas into finished pages that look sharp and perform well.</p>
+                {% comment %} <p>Alongside building projects, I create content that breaks down what I'm learning. That mix of development and communication helps me design better products and explain complex ideas more simply.</p> {% endcomment %}
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <h3 class="stat-number">12+</h3>
+                    <p class="stat-label">Projects Shipped</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number">2+</h3>
+                    <p class="stat-label">Years of Hands-On Practice</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number">Full-Stack</h3>
+                    <p class="stat-label">Frontend, Backend & Deployment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="section-heading">
+            <p class="section-kicker">Selected Work</p>
+            <h2 class="section-title dark-title">Featured Projects</h2>
+        </div>
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                {% for project in projects %}
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="{% if forloop.first %}true{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
+                {% empty %}
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                {% endfor %}
+            </div>
+            <div class="carousel-inner">
+                {% for project in projects %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        {% if project.image %}
+                            <img src="{{ project.image.url }}" class="d-block w-100" alt="{{ project.title }}">
+                        {% else %}
+                            <div class="project-image-fallback d-flex align-items-center justify-content-center" style="height: 400px; background: linear-gradient(135deg, #d6d0ff, #bcaef6 55%, #f7d6ee);">
+                                <div class="text-center">
+                                    <span class="d-block mb-2" style="font-size: 1.2rem; color: #1e1b2a;">Preview</span>
+                                    <strong style="font-size: 2rem; color: #1e1b2a;">{{ project.title }}</strong>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="carousel-caption">
+                            <h5>{{ project.title }}</h5>
+                            <p>{{ project.description }}</p>
+                            <div class="project-tags mb-3">
+                                {% if project.tags1 %}<span class="badge bg-primary me-2">{{ project.tags1 }}</span>{% endif %}
+                                {% if project.tags2 %}<span class="badge bg-secondary me-2">{{ project.tags2 }}</span>{% endif %}
+                                {% if project.tags3 %}<span class="badge bg-success me-2">{{ project.tags3 }}</span>{% endif %}
+                            </div>
+                            {% if project.project_url %}
+                                <a href="{{ project.project_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="carousel-item active">
+                        <div class="project-image-fallback d-flex align-items-center justify-content-center" style="height: 400px; background: linear-gradient(135deg, #d6d0ff, #bcaef6 55%, #f7d6ee);">
+                            <div class="text-center">
+                                <span class="d-block mb-2" style="font-size: 1.2rem; color: #1e1b2a;">Coming Soon</span>
+                                <strong style="font-size: 2rem; color: #1e1b2a;">New Case Study</strong>
+                            </div>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5>Your next featured project can go here.</h5>
+                            <p>Add a project in the admin dashboard and it will automatically appear in this section.</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="skills">
+    <div class="container">
+        <div class="section-heading">
+            <p class="section-kicker">What I Do</p>
+            <h2 class="section-title">Core Services</h2>
+        </div>
+        <div class="fancy-nav">
+            <div class="fancy-nav__imgs">
+                <div class="fancy-nav__img">
+                    <img src="{% static 'service-frontend.svg' %}" alt="Frontend development workspace">
+                </div>
+                <div class="fancy-nav__img">
+                    <img src="{% static 'service-content.svg' %}" alt="Content creation setup">
+                </div>
+                <div class="fancy-nav__img">
+                    <img src="{% static 'service-seo.svg' %}" alt="SEO strategy board">
+                </div>
+                <div class="fancy-nav__img">
+                    <img src="{% static 'service-qa.svg' %}" alt="Quality assurance workflow">
+                </div>
+            </div>
+            <div class="fancy-nav__list">
+                <div class="fancy-nav__item" tabindex="0" role="button" aria-label="Open Backend Development details">
+                    <div class="fancy-nav__item-details">
+                        <span class="fancy-nav__index">01</span>
+                        <h3 class="fancy-nav__title">Backend Development</h3>
+                        <div class="fancy-nav__description">
+                            <p>Python (Django), REST APIs, authentication, and strong server-side architecture.</p>
+                        </div>
+                        <button type="button" class="fancy-nav__more-btn">Read More</button>
+                    </div>
+                </div>
+                <div class="fancy-nav__item" tabindex="0" role="button" aria-label="Open Database and Data Management details">
+                    <div class="fancy-nav__item-details">
+                        <span class="fancy-nav__index">02</span>
+                        <h3 class="fancy-nav__title">Database &amp; Data Management</h3>
+                        <div class="fancy-nav__description">
+                            <p>PostgreSQL, SQLite, Django ORM, data modeling, and database optimization.</p>
+                        </div>
+                        <button type="button" class="fancy-nav__more-btn">Read More</button>
+                    </div>
+                </div>
+                <div class="fancy-nav__item" tabindex="0" role="button" aria-label="Open Frontend and Web Technologies details">
+                    <div class="fancy-nav__item-details">
+                        <span class="fancy-nav__index">03</span>
+                        <h3 class="fancy-nav__title">Frontend &amp; Web Technologies</h3>
+                        <div class="fancy-nav__description">
+                            <p>HTML5, CSS3, Bootstrap, JavaScript, and responsive web design.</p>
+                        </div>
+                        <button type="button" class="fancy-nav__more-btn">Read More</button>
+                    </div>
+                </div>
+                <div class="fancy-nav__item" tabindex="0" role="button" aria-label="Open Tools and Deployment details">
+                    <div class="fancy-nav__item-details">
+                        <span class="fancy-nav__index">04</span>
+                        <h3 class="fancy-nav__title">Tools &amp; Deployment</h3>
+                        <div class="fancy-nav__description">
+                            <p>Git, GitHub, deployment, debugging, testing, and environment configuration.</p>
+                        </div>
+                        <button type="button" class="fancy-nav__more-btn">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fancy-nav__tabs" aria-hidden="true">
+                <div class="fancy-nav__tab">
+                    <div class="fancy-nav__tab-container">
+                        <button type="button" class="fancy-nav__close-btn" title="Close"></button>
+                        <div class="fancy-nav__tab-img">
+                            <img src="{% static 'service-frontend.svg' %}" alt="Frontend development workspace">
+                        </div>
+                        <div class="fancy-nav__tab-description">
+                            <h3 class="fancy-nav__tab-title">Backend Development</h3>
+                            <div class="fancy-nav__tab-content">
+                                <p>Python (Django)</p>
+                                <p>REST API Development</p>
+                                <p>Authentication &amp; Authorization</p>
+                                <p>Server-side Logic &amp; Application Architecture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fancy-nav__tab">
+                    <div class="fancy-nav__tab-container">
+                        <button type="button" class="fancy-nav__close-btn" title="Close"></button>
+                        <div class="fancy-nav__tab-img">
+                            <img src="{% static 'service-content.svg' %}" alt="Content creation setup">
+                        </div>
+                        <div class="fancy-nav__tab-description">
+                            <h3 class="fancy-nav__tab-title">Database &amp; Data Management</h3>
+                            <div class="fancy-nav__tab-content">
+                                <p>PostgreSQL / SQLite</p>
+                                <p>Django ORM</p>
+                                <p>Database Design &amp; Optimization</p>
+                                <p>Data Modeling</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fancy-nav__tab">
+                    <div class="fancy-nav__tab-container">
+                        <button type="button" class="fancy-nav__close-btn" title="Close"></button>
+                        <div class="fancy-nav__tab-img">
+                            <img src="{% static 'service-seo.svg' %}" alt="SEO strategy board">
+                        </div>
+                        <div class="fancy-nav__tab-description">
+                            <h3 class="fancy-nav__tab-title">Frontend &amp; Web Technologies</h3>
+                            <div class="fancy-nav__tab-content">
+                                <p>HTML5, CSS3</p>
+                                <p>Bootstrap</p>
+                                <p>JavaScript</p>
+                                <p>Responsive Web Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fancy-nav__tab">
+                    <div class="fancy-nav__tab-container">
+                        <button type="button" class="fancy-nav__close-btn" title="Close"></button>
+                        <div class="fancy-nav__tab-img">
+                            <img src="{% static 'service-qa.svg' %}" alt="Quality assurance workflow">
+                        </div>
+                        <div class="fancy-nav__tab-description">
+                            <h3 class="fancy-nav__tab-title">Tools &amp; Deployment</h3>
+                            <div class="fancy-nav__tab-content">
+                                <p>Git &amp; GitHub</p>
+                                <p>Render / PythonAnywhere</p>
+                                <p>Debugging &amp; Testing</p>
+                                <p>Environment Configuration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-layout">
+            <div class="contact-copy">
+                <p class="section-kicker">Let's Work Together</p>
+                <h2 class="section-title">Ready when you are.</h2>
+                <p class="contact-subtitle">Tell me about your project, your idea, or the experience you want to build. I'll reply as soon as I can.</p>
+            </div>
+
+            <div class="contact-panel">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="contact-status {{ message.tags }}">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+                <form method="post" action="{% url 'index' %}" class="contact-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" value="{{ form.name.value|default_if_none:'' }}" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" value="{{ form.email.value|default_if_none:'' }}" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required>{{ form.message.value|default_if_none:'' }}</textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
