@@ -52,33 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    const stackedSections = document.querySelectorAll('section[id]');
-    let lastScrollY = window.scrollY;
-
-    const applyScrollUpStackEffect = function() {
-        const currentScrollY = window.scrollY;
-        const scrollingUp = currentScrollY < lastScrollY;
-
-        stackedSections.forEach(section => {
-            if (section.id === 'home') {
-                return;
-            }
-
-            const rect = section.getBoundingClientRect();
-            const sectionInView = rect.top < window.innerHeight * 0.8 && rect.bottom > 120;
-
-            if (scrollingUp && sectionInView) {
-                section.classList.add('section-stack');
-            } else {
-                section.classList.remove('section-stack');
-            }
-        });
-
-        lastScrollY = currentScrollY;
-    };
-
-    window.addEventListener('scroll', applyScrollUpStackEffect, { passive: true });
-
     // Observe project cards
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {

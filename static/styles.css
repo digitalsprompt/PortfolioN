@@ -80,17 +80,6 @@ img {
     text-transform: uppercase;
 }
 
-section[id]:not(#home) {
-    position: relative;
-    transition: transform 0.45s ease, box-shadow 0.45s ease, border-radius 0.45s ease;
-}
-
-section[id]:not(#home).section-stack {
-    transform: translateY(-10px) scale(0.995);
-    box-shadow: 0 18px 36px rgba(9, 9, 12, 0.18);
-    border-radius: 28px;
-}
-
 .dark-title {
     color: var(--white-slab-text);
 }
